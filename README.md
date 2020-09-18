@@ -92,14 +92,18 @@ SSH into the control node and follow the steps below:
 - Copy the playbooks(config-dvwa.yml, config-elk.yml, & filebeat-playbook.yml) to /etc/ansible/playbooks, and the ansible.cfg to /etc/ansible/ansible.cfg
 - Update the hosts file(/etc/ansible/hosts) to include the IP & username of the web VMs & ELK VM.
 - Run the playbook, and navigate to ELK-VM-Public-IP:5601/app/kibana to check that the installation worked as expected.
+
+```
 ansible -l web config-dvwa.yml
 ansible -l elk config-elk.yml
 ansible -l web filebeat-playbook.yml
+```
+
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-ansible-playbook -l web playbooks/filebeat-playbook.yml
+```ansible-playbook -l web playbooks/filebeat-playbook.yml```
 or
-ansible-playbook -l web1 playbooks/filebeat-playbook.yml
+```ansible-playbook -l web1 playbooks/filebeat-playbook.yml```
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
