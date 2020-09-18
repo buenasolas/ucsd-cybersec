@@ -66,8 +66,7 @@ The playbook implements the following tasks:
 - download, configure, & start ELK container
 
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![ELK docker ps output](https://github.com/buenasolas/ucsd-cybersec/blob/master/Images/elk-docker-ps.png?raw=true)
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance:
 
 ![ELK docker TEST](/Images/elk-docker-ps.png)
 
@@ -98,11 +97,20 @@ ansible -l elk config-elk.yml
 ansible -l web filebeat-playbook.yml
 ```
 
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-```ansible-playbook -l web playbooks/filebeat-playbook.yml```
-or
-```ansible-playbook -l web1 playbooks/filebeat-playbook.yml```
 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+To install filebeats on the entire web tier or group:
+```
+ansible-playbook -l web playbooks/filebeat-playbook.yml
+```
+or to do the same for a single host:
+```
+ansible-playbook -l web1 playbooks/filebeat-playbook.yml
+```
 
+To check that the ELK stack is up & running, you will want to navigate to the public IP of the ELK-VM. The following URLs show examples:
+
+http://ELK-VM-PublicIP:5601/app/kibana
+
+e.g. 
+http://40.76.31.158:5601/app/kibana
+(non-functioning URL)
