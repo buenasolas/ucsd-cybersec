@@ -88,7 +88,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbooks(config-dvwa.yml, config-elk.yml, & filebeat-playbook.yml) to /etc/ansible/playbooks, and the ansible.cfg to /etc/ansible/ansible.cfg
-- Update the hosts file(/etc/ansible/hosts) to include the IP & username of the web VMs & ELK VM.
+- Update the hosts file ```/etc/ansible/hosts``` to include the IP & username of the web VMs & ELK VM.
 - Run the playbook(s), and navigate to _ELK-VM-Public-IP:5601/app/kibana_ to check that the installation worked as expected.
 
 ```
@@ -107,6 +107,7 @@ or to do the same for a single host:
 ansible-playbook -l web1 playbooks/filebeat-playbook.yml
 ```
 These groups and hostnames are configured in the ansible hosts file, in this case ```/etc/ansible/hosts```
+
 To check that the ELK stack is up & running, you will want to navigate to the public IP of the ELK-VM. The following URLs show examples:
 
 http://ELK-VM-PublicIP:5601/app/kibana
