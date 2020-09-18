@@ -68,8 +68,7 @@ The playbook implements the following tasks:
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-[!ELK docker ps output]
-(https://github.com/buenasolas/ucsd-cybersec/blob/master/Images/elk-docker-ps.png)
+[!ELK docker ps output](https://github.com/buenasolas/ucsd-cybersec/blob/master/Images/elk-docker-ps.png?raw=true)
 
 
 ### Target Machines & Beats
