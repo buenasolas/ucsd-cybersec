@@ -51,9 +51,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 68.8.252.233         |
-|          |                     |                      |
-|          |                     |                      |
+| jumpbox-provisioner | Yes                 | 68.8.252.233(ssh)         |
+| web-1-vm | No                  | 10.0.0.4(ssh),AzureLB(http)     |
+| web-2-vm | No                  | 10.0.0.4(ssh),AzureLB(http)     |
+| web-2-vm | No                  | 10.0.0.4(ssh),AzureLB(http)     |
+| elk-vm         |  Yes                   | 10.0.0.4(ssh),68.8.252.233(http/tcp/5601)                     |
 
 ### Elk Configuration
 
