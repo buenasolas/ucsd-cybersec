@@ -2,8 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![ELK Network Diagram]
-(https://github.com/buenasolas/ucsd-cybersec/blob/master/Images/ELK-diagram.png)
+![ELK Network Diagram](https://github.com/buenasolas/ucsd-cybersec/blob/master/Images/ELK-diagram.png?raw=true)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible/playbooks/config-dvwa.yml|config-elk.yml|filebeat-playbook.yml may be used to install only certain pieces of it, such as Filebeat.
 
