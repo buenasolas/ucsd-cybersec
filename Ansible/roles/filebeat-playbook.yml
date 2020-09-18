@@ -1,0 +1,33 @@
+---
+- name: Configure filebeats 
+  hosts: web
+  become: yes
+  tasks:
+
+  - name: download filebeats DEB package
+    get_url:
+      url: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+      dest: /tmp/filebeat.deb
+      force: no
+
+  - name: install filebeat package from remote deb
+    apt:
+      deb: /tmp/filebeat.deb
+      state: present
+
+  - name: copy filebeat config
+    copy:
+      src: /etc/ansible/files/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+
+  - name: enable filebeat system module
+    command: filebeat modules enable system
+
+  - name: run filebeat setup
+    command: filebeat setup
+
+  - name: filebeat minusE
+    shell: "(filebeat -e >/dev/null 2>&1 &)"
+    async: 10
+    poll: 0
+
