@@ -25,7 +25,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem and system configuration & logs.
 - Filebeat will watch files on disk, usually for monitoring logfiles that are being actively written to.
-- _TODO: What does Metricbeat record?_
+- Metricbeat will gather metrics, e.g. latency, response times, available memory, CPU load, etc.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -51,7 +51,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.1 10.0.0.2 20.   |
+| Jump Box | Yes                 | 68.8.252.233         |
 |          |                     |                      |
 |          |                     |                      |
 
